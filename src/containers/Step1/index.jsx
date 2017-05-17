@@ -3,7 +3,7 @@
  */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import LoginForm from '../../components/LoginForm';
+import Form from 'react-jsonschema-form';
 import BasicHeader from '../../components/BasicHeader';
 import { increment, decrement } from '../../redux/actions/counter-action';
 
@@ -26,15 +26,32 @@ class BasicLoginPage extends Component {
   }
 
   render() {
+    const schema = {
+      title: 'Todo',
+      type: 'object',
+      required: ['title'],
+      properties: {
+        title: { type: 'string', title: 'Title', default: 'A new task' },
+        done: { type: 'boolean', title: 'Done?', default: false },
+      },
+    };
+
     return (
       <section id="login_page">
         <div>
           Counter: { this.props.counterReducer }
         </div>
-        <button onClick={() => this.decrementClick('DECREMENT')}>Decrement</button>
+        <button className="btn btn-default" onClick={() => this.decrementClick('DECREMENT')}>Decrement</button>
         <button onClick={() => this.incrementClick('INCREMENT')}>Increment</button>
         <BasicHeader>Login Form Page 1</BasicHeader>
-        <LoginForm loginAction={this.loginAction} />
+
+        <Form
+          id="login_form"
+          schema={schema}
+          validate={this.validate}
+          showErrorList={false}
+          onSubmit={x => console.log(x)}
+        />
       </section>
     );
   }

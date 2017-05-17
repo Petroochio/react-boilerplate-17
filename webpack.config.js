@@ -43,6 +43,7 @@ module.exports = function (env) {
       parts.generateSourceMaps({ type: 'source-map' }),
       parts.loadJavascript(PATHS.app),
       parts.loadCss(PATHS.app),
+      parts.loadFonts(),
       parts.minifyJavascript(),
       parts.compressImages(PATHS.app),
     ]);
@@ -68,6 +69,7 @@ module.exports = function (env) {
     parts.generateSourceMaps({ type: 'cheap-module-eval-source-map' }),
     parts.loadJavascript(PATHS.app),
     parts.loadCss(PATHS.app),
+    parts.loadFonts(),
     parts.compressImages(PATHS.app),
   ]);
 };

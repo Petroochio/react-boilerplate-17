@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
-import BasicLoginPage from './containers/BasicLoginPage';
-import ExamplePage2 from './containers/ExamplePage2';
+import Step1 from './containers/Step1';
 
 // Stylesheets
 import './stylesheets/main.scss';
@@ -22,11 +21,8 @@ class App extends Component {
         <div>
           <ul>
             <li><Link to="/">Page 1</Link></li>
-            <li><Link to="/page2">Page 2</Link></li>
-            <li><Link to="/styleguide">Style Guide</Link></li>
           </ul>
-          <Route exact path="/" component={BasicLoginPage} />
-          <Route path="/page2" component={ExamplePage2} />
+          <Route exact path="/" component={Step1} />
         </div>
       </Router>
     );

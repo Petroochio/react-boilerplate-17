@@ -60,9 +60,30 @@ exports.loadCss = function (paths) {
     module: {
       rules: [
         {
-          test: /\.scss/,
+          test: /\.(scss|sass)/,
           include: paths,
           loaders: ['style-loader', 'css-loader?minimize', 'resolve-url-loader', 'sass-loader?sourceMap'],
+        },
+      ],
+    },
+  };
+};
+
+exports.loadFonts = function () {
+  return {
+    module: {
+      rules: [
+        {
+          test: /\.woff$/,
+          loader: 'url-loader?limit=10000&mimetype=application/font-woff&name=[path][name].[ext]',
+        },
+        {
+          test: /\.woff2$/,
+          loader: 'url-loader?limit=10000&mimetype=application/font-woff2&name=[path][name].[ext]',
+        },
+        {
+          test: /\.(eot|ttf|svg|gif|png)$/,
+          loader: 'file-loader',
         },
       ],
     },
