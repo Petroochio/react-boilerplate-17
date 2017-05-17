@@ -1,0 +1,61 @@
+rules:
+  brace-style:
+    - enabled: true
+    - allow-single-line: false
+    - style: '1tbs'
+  class-name-format:
+    - enabled: true
+    - convention: hyphenatedlowercase
+  empty-line-between-blocks:
+    - enabled: true
+    - include: true
+  extends-before-declarations:
+    - enabled: true
+    - include: true
+  final-newline:
+    - enabled: true
+    - include: false
+  hex-length:
+    - enabled: true
+    - style: long
+  hex-notation:
+    - enabled: true
+    - style: lowercase
+  indentation:
+    - enabled: true
+    - size: 4
+  leading-zero:
+    - enabled: true
+    - include: true
+  no-css-comments:
+    - enabled: true
+    - include: true
+  no-duplicate-properties:
+    - enabled: true
+  no-empty-rulesets:
+    - enabled: true
+  no-misspelled-properties:
+    - enabled: true
+  no-trailing-whitespace:
+    - enabled: true
+  no-trailing-zero:
+    - enabled: true
+  one-declaration-per-line:
+    - enabled: true
+  quotes:
+    - enabled: true
+    - style: single
+  space-after-colon:
+    - enabled: true
+    - include: true
+  space-around-operator:
+    - enabled: true
+    - include: true
+  space-before-brace:
+    - enabled: true
+    - include: true
+  trailing-semicolon:
+    - enabled: true
+    - include: true
+  url-quotes:
+    - enabled: true
